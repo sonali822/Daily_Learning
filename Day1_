@@ -7,3 +7,12 @@ A list, denoted using the <ul> (unordered list), <ol> (ordered list) and <li> (l
 An image, denoted using the <img> tag
 A divider, denoted using the <div> tag
 A text span, denoted using the <span> tag
+
+HTML List Tags
+Tag	Description
+<ul>	Defines an unordered list
+<ol>	Defines an ordered list
+<li>	Defines a list item
+<dl>	Defines a description list
+<dt>	Defines a term in a description list
+<dd>	Describes the term in a description list
