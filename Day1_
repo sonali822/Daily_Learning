@@ -54,8 +54,30 @@ A visited link is underlined and purple
 An active link is underlined and red
 Anchor Element
 ahref --> anchor Hypertext REFerence
+--------------------------------------------------------------------------------------------------------------------
+HTML <img> alt Attribute-->
+Example
+An image with an alternate text specified:
 
+<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+Definition and Usage
+The required alt attribute specifies an alternate text for an image, if the image cannot be displayed.
 
+The alt attribute provides alternative information for an image if a user for some reason cannot view it (because of slow connection, an error in the src attribute, or if the user uses a screen reader).
+
+Tip: To create a tooltip for an image, use the title attribute!
+
+Syntax
+<img alt="text">
+Attribute Values
+Value	Description
+text	Specifies an alternate text for an image.
+Guidelines for the alt text:
+
+The text should describe the image if the image contains information
+The text should explain where the link goes if the image is inside an <a> element
+Use alt="" if the image is only for decoration !
+-------------------------------------------------------
 
 
 CSS- Cascading Style Sheets
