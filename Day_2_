@@ -1,1 +1,19 @@
-JavaScript---------->
+JavaScript ES6 Fundamentals---------->
+ECMAScript 6, also known as ES6 and ECMAScript 2015, was the second major revision to JavaScript.
+
+This chapter describes the most important features of ES6.
+
+New Features in ES6
+The let keyword
+The const keyword
+JavaScript Arrow Functions
+JavaScript Class
+JavaScript Promise
+JavaScript Symbol
+Default Parameter Values
+Function Rest Parameter
+Array.find()
+Array.findIndex()
+New Number Properties
+New Number Methods
+New Global Methods
