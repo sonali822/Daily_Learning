@@ -109,3 +109,49 @@ may be more important than the advantages listed above. In those cases,
 using kebab-case everywhere is also acceptable.
 
 
+
+
+Full-word component namesSTRONGLY RECOMMENDED
+Component names should prefer full words over abbreviations.
+
+The autocompletion in editors make the cost of writing longer names very low, while the clarity they provide is invaluable. Uncommon abbreviations, 
+in particular, should always be avoided.
+
+Bad
+components/
+|- SdSettings.vue
+|- UProfOpts.vue
+Good
+components/
+|- StudentDashboardSettings.vue
+|- UserProfileOptions.vue
+
+
+Multi-attribute elementsSTRONGLY RECOMMENDED
+Elements with multiple attributes should span multiple lines, with one attribute per line.
+
+In JavaScript, splitting objects with multiple properties over multiple lines is widely considered a good convention, because it’s much easier to read.
+Our templates and JSX deserve the same consideration.
+
+Bad
+<img src="https://vuejs.org/images/logo.png" alt="Vue Logo">
+<MyComponent foo="a" bar="b" baz="c"/>
+Good
+<img
+  src="https://vuejs.org/images/logo.png"
+  alt="Vue Logo"
+>
+<MyComponent
+  foo="a"
+  bar="b"
+  baz="c"
+/>
+
+
+Quoted attribute valuesSTRONGLY RECOMMENDED
+Non-empty HTML attribute values should always be inside quotes (single or double, whichever is not used in JS).
+
+While attribute values without any spaces are not required to have quotes in HTML, this practice often leads to avoiding spaces, making attribute values 
+less readable.
+
+
