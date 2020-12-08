@@ -1,0 +1,46 @@
+Vue Style Guide -->
+
+Multi-word component names ESSENTIAL
+Component names should always be multi-word, except for root App components, and built-in components provided by Vue, such as <transition> or <component>.
+
+This prevents conflicts with existing and future HTML elements, since all HTML elements are a single word.
+
+
+
+Component data ESSENTIAL
+Component data must be a function.
+
+When using the data property on a component (i.e. anywhere except on new Vue), the value must be a function that returns an object.
+
+
+Prop definitions ESSENTIAL
+Prop definitions should be as detailed as possible.
+
+In committed code, prop definitions should always be as detailed as possible, specifying at least type(s).
+
+Keyed v-for ESSENTIAL
+Always use key with v-for.
+
+key with v-for is always required on components, in order to maintain internal component state down the subtree. 
+Even for elements though, it’s a good practice to maintain predictable behavior, such as object constancy in animations.
+
+
+Avoid v-if with v-forESSENTIAL
+Never use v-if on the same element as v-for.
+
+There are two common cases where this can be tempting:
+
+To filter items in a list (e.g. v-for="user in users" v-if="user.isActive"). 
+In these cases, replace users with a new computed property that returns your filtered list (e.g. activeUsers).
+
+To avoid rendering a list if it should be hidden (e.g. v-for="user in users" v-if="shouldShowUsers"). 
+In these cases, move the v-if to a container element (e.g. ul, ol).
+
+Private property namesESSENTIAL
+Use module scoping to keep private functions inaccessible from the outside. If that’s not possible, always use the $_ prefix for custom private properties 
+in a plugin, mixin, etc that should not be considered public API. 
+Then to avoid conflicts with code by other authors, also include a named scope (e.g. $_yourPluginName_).
+
+
+
+
