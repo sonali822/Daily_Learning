@@ -42,5 +42,70 @@ in a plugin, mixin, etc that should not be considered public API.
 Then to avoid conflicts with code by other authors, also include a named scope (e.g. $_yourPluginName_).
 
 
+Component filesSTRONGLY RECOMMENDED
+Whenever a build system is available to concatenate files, each component should be in its own file.
+
+This helps you to more quickly find a component when you need to edit it or review how to use it.
+
+Single-file component filename casingSTRONGLY RECOMMENDED
+Filenames of single-file components should either be always PascalCase or always kebab-case.
+
+PascalCase works best with autocompletion in code editors, as it’s consistent with how we reference components in JS(X) and templates,
+wherever possible. However, mixed case filenames can sometimes create issues on case-insensitive file systems, 
+which is why kebab-case is also perfectly acceptable.
+
+
+Base component namesSTRONGLY RECOMMENDED
+Base components (a.k.a. presentational, dumb, or pure components) that apply app-specific styling and conventions should all begin with a specific prefix, 
+such as Base, App, or V.
+
+Tightly coupled component namesSTRONGLY RECOMMENDED
+Child components that are tightly coupled with their parent should include the parent component name as a prefix.
+
+If a component only makes sense in the context of a single parent component, that relationship should be evident in its name. 
+Since editors typically organize files alphabetically, 
+this also keeps these related files next to each other.
+
+
+Order of words in component namesSTRONGLY RECOMMENDED
+Component names should start with the highest-level (often most general) words and end with descriptive modifying words.
+
+
+Self-closing componentsSTRONGLY RECOMMENDED
+Components with no content should be self-closing in single-file components, string templates, and JSX - but never in DOM templates.
+
+Components that self-close communicate that they not only have no content, but are meant to have no content. 
+It’s the difference between a blank page in a book and one labeled “This page intentionally left blank.” Your code is also cleaner without the unnecessary closing tag.
+
+Unfortunately, HTML doesn’t allow custom elements to be self-closing - only official “void” elements. 
+That’s why the strategy is only possible when Vue’s template compiler can reach the template before the DOM, then serve the DOM spec-compliant HTML.
+
+Bad
+<!-- In single-file components, string templates, and JSX -->
+<MyComponent></MyComponent>
+<!-- In DOM templates -->
+<my-component/>
+Good
+<!-- In single-file components, string templates, and JSX -->
+<MyComponent/>
+<!-- In DOM templates -->
+<my-component></my-component>
+
+
+
+Component name casing in templatesSTRONGLY RECOMMENDED
+In most projects, component names should always be PascalCase in single-file components and string templates - but kebab-case in DOM templates.
+
+PascalCase has a few advantages over kebab-case:
+
+Editors can autocomplete component names in templates, because PascalCase is also used in JavaScript.
+<MyComponent> is more visually distinct from a single-word HTML element than <my-component>, because there are two character differences (the two capitals),
+rather than just one (a hyphen).
+If you use any non-Vue custom elements in your templates, such as a web component, PascalCase ensures that your Vue components remain distinctly visible.
+Unfortunately, due to HTML’s case insensitivity, DOM templates must still use kebab-case.
+
+Also note that if you’ve already invested heavily in kebab-case, consistency with HTML conventions and being able to use the same casing across all your projects 
+may be more important than the advantages listed above. In those cases, 
+using kebab-case everywhere is also acceptable.
 
 
